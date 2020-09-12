@@ -1,0 +1,29 @@
+from flask import jsonify, make_response
+
+
+response_body={
+	"svm": "fun",
+	"knn": "fun",
+	"naive bayes": "fun"
+}
+
+res=make_response(jsonify(response_body),200)
+return res
+
+
+@app.route('/postjson', methods = ['POST'])
+def postJsonHandler():
+    print (request.is_json)
+    content = request.get_json()
+    print (content)
+    response_body={
+        "svm": "fun",
+        "knn": "fun",
+        "naive bayes": "fun"
+    }
+
+    res=make_response(jsonify(response_body),200)
+    return res
+
+
+http://18.236.65.205:80/postjson
